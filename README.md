@@ -18,14 +18,15 @@ az login
 4. Create a resource group where all the resources will be grouped.
 ```bash
 az group create --name <resource-group-name> --location <location>
-
-5. Create an AKS cluster by running the following command:
+```
+5. Create an AKS cluster (preferably with v1.25.5) by running the following command:
 ```bash
-az aks create --resource-group <resource-group-name> --name <cluster-name> --node-count <node-count> --generate-ssh-keys
-
+az aks create --resource-group <resource-group-name> --name <cluster-name> --node-count <node-count> --kubernetes-version 1.25.5 --generate-ssh-keys
+```
 6. Once the AKS cluster is created, you can connect to it by running the following command:
 ```bash
 az aks get-credentials --resource-group <resource-group-name> --name <cluster-name>
+```
 
 7. Make sure kubectl is installed on your terminal/cmd prompt using the below documentation
     [kubectl](https://kubernetes.io/docs/tasks/tools/)
